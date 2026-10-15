@@ -1,4 +1,4 @@
-# ASM-x86-64
+# AWSM-x64
 
 **Assembly sandbox**: Implementation of mathematical formulas, alogrithms and other operations. It uses NASM , follows x64(Windows) ABI , runs on Intel & AMD chips.
 
