@@ -9,6 +9,7 @@
 - IO Procedures
 - Maths procedures
 - String operations ( More in queue)
+- Fun things.
 
 ----
 
@@ -21,7 +22,7 @@ Learning SIMD is fun, but there's not a single place to learn it. You'll have to
 
 The SIMD instruction use `AVX2` instruction set which will work with both Intel and AMD CPUs just fine.
 
-I use my custom [PowerShell script](https://gist.github.com/ArcShahi/eb3bbc0568130a1519e604e476ec13b6) to Assemble and link to create an executable or library.
+I use my custom [PowerShell script](https://gist.github.com/ArcShahi/eb3bbc0568130a1519e604e476ec13b6) to assemble and link to create an executable or library.
 
 
 
@@ -39,7 +40,7 @@ I use my custom [PowerShell script](https://gist.github.com/ArcShahi/eb3bbc05681
 ```cpp
 
 // Create lib using my script and use it VS26 MSVC
-// neko ".\simd\vector.asm" ,".\simd\matrix.asm", ".\simd\vec3_rotate.asm" -OutType dll -OutName "awsm" -BuildMode release
+// Neko.ps1 ".\simd\vector.asm" ,".\simd\matrix.asm", ".\simd\vec3_rotate.asm" -OutType dll -OutName "awsm" -BuildMode release
 // or just download library from : Releases tab
 
 #include <print>
