@@ -15,12 +15,12 @@ segment .data
 
 segment .text 
 
-; rcx=&arr,rdx=N,xmm2=x  ->xmm0 
+; xmm0 func(rcx= &buffer, edx= N , xmm2= x)
 horner_eval:
   
-  vmovd xmm0,[rcx] ; xmm0 = arr[0]=Highest Degree coeff 
+  vmovd xmm0,[rcx] ; xmm0 = arr[0]= Highest Degree coeff 
   mov eax, 1 
-; Iterating from back 
+
  .loop:
   cmp eax,edx 
   jge .done 
@@ -34,7 +34,7 @@ horner_eval:
 main:
   push rdi
   push rsi 
-  sub rsp,0x38               ; rule of tumb : must be odd multiple of 8 
+  sub rsp,0x38               ; rule of thumb : must be odd multiple of 8 
   call _CRT_INIT
 
   lea rcx,[msg0]
@@ -57,7 +57,7 @@ main:
   xor esi,esi 
   mov rdi,qword[rsp+0x2C]
 
-.fetch_input:
+.loop:
   cmp esi,[rsp+0x20]
   jge .done
 
@@ -66,7 +66,7 @@ main:
   call scanf 
 
   inc esi 
-  jmp .fetch_input
+  jmp .loop
 
 .done:
   
