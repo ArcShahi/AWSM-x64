@@ -1,8 +1,8 @@
 ; Program to evaluate Polynomials  using Horner's formula 
-; Todo : Remove heap allocation and deal on stack
+; Upto 28 terms 
 default rel
 
-extern _CRT_INIT, printf,scanf,malloc
+extern _CRT_INIT, printf,scanf
 global main
 
 segment .data
@@ -34,7 +34,7 @@ horner_eval:
 main:
   push rdi
   push rsi 
-  sub rsp,0x38               ; rule of thumb : must be odd multiple of 8 
+  sub rsp,0x98               ; rule of thumb : must be odd multiple of 8 
   call _CRT_INIT
 
   lea rcx,[msg0]
@@ -43,19 +43,12 @@ main:
   lea rcx,[fmt]
   lea rdx,[rsp+0x20] 
   call scanf
-
-  ; Allocate buffer 
-  mov rcx,[rsp+0x20]
-  shl rcx,0x02              ; terms * sizeof(int) 
-  call malloc               ; Assuming malloc succedded 
-
-  mov qword[rsp+0x2C],rax   ; buffer* at rsp+44 
   
   lea rcx,[msg1]
   call printf 
 
   xor esi,esi 
-  mov rdi,qword[rsp+0x2C]
+  lea rdi,[rsp+0x28]
 
 .loop:
   cmp esi,[rsp+0x20]
@@ -77,7 +70,7 @@ main:
   lea rdx,[rsp+0x24]        ; x 
   call scanf
 
-  mov rcx,[rsp+0x2C]        ; passing pointer to heap allocated buffer
+  lea rcx,[rsp+0x28]        ; passing addrees of stack 
   mov rdx,[rsp+0x20]        ; size N
   vmovd xmm2,[rsp+0x24]     ; x at 
   call horner_eval
@@ -91,7 +84,7 @@ main:
   vmovq r8,xmm2             ; and mirror it into int reg. Welcome to C -_- 
   call printf              
 
-  add rsp,0x38
+  add rsp,0x98
   pop rsi 
   pop rdi 
 
