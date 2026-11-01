@@ -6,6 +6,8 @@ global main
 
 segment .data
   x dq 69    ; 'x' is just some label for mem address
+
+segment .rdata 
   fmt   db "%p %d %p",0
 
 segment .text
