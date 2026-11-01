@@ -4,7 +4,7 @@ default rel
 extern _CRT_INIT,printf,scanf 
 global main
 
-segment .data
+segment .rdata
 msg db "Gimme num: ",0xA,0
 fmt db "%d",0
 ans db "Factorial : %d",0xA,0
