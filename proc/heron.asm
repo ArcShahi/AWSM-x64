@@ -4,21 +4,21 @@ default rel
 extern _CRT_INIT,printf,scanf
 global main
 
-segment .data
+segment .rdata
   
   msg db "Type sides(a,b,c): ",0xA,0
   fmt db "%f %f %f",0
   ans db "Area: %g",0xA,0
-  two dd 0.5 
 
 segment .text
   
 ; area(xmm0a,xmm1=b,xmm2=c) 
 area:
-
+  mov rax,0x3f000000  
+  vmovq xmm4,rax 
   vaddss xmm3,xmm1,xmm2   ;  xmm3= b + c 
   vaddss xmm3,xmm3,xmm0   
-  vmulss xmm3,xmm3,[two]  ;  xmm3 -  s = ( a + b + c ) / 2  
+  vmulss xmm3,xmm3,xmm4  ;  xmm3 -  s = ( a + b + c ) / 2  
   vsubss xmm4,xmm3,xmm0   ;  xmm4 = ( s - a )
   vsubss xmm0,xmm3,xmm1   ;  xmm0 = ( s - b ) 
   vsubss xmm1,xmm3,xmm2   ;  xmm1 = ( s - c ) 
