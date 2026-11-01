@@ -6,9 +6,9 @@ default rel
 extern _CRT_INIT,printf,scanf,malloc
 global main
 
-segment .data
+segment .rdata
   msg  db "Specify arr size: ",0
-  msg2 db "Elements in ascending order...",0xA,0 
+  msg2 db "Elements in ascending order: ",0xA,0 
   msg3 db "Value to search: ",0
   ans0 db "NOT FOUND",0xA,0xA,0
   ans1 db "FOUND @ : %d ",0xA,0xA,0 

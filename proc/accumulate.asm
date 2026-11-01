@@ -6,10 +6,10 @@ default rel
 extern _CRT_INIT,printf,scanf,malloc
 global main
 
-segment .data
-  msg  db "Specify the size: ",0xA,0
+segment .rdata
+  msg  db "Count of elements: ",0
   fmt  db "%d",0
-  msg2 db  "Elements...",0xA,0
+  msg2 db  "Elements: ",0xA,0
   ans  db "Accumulated : %d ",0xA,0
 
 

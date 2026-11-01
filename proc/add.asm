@@ -3,7 +3,7 @@ default rel
 extern _CRT_INIT,printf,scanf
 global main 
 
-segment .data
+segment .rdata
   prompt db "Hello, gimme 2 nums: ",0xD,0xA,0
   fmt db "%lld%lld",0
   output db "Summed: %d >_<",0xD,0xA,0

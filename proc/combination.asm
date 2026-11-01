@@ -5,7 +5,7 @@ default rel
 extern _CRT_INIT,printf,scanf
 global main
 
-segment .data
+segment .rdata
   msg db 0xA,"C(n,k): ",0
   fmt db "%d %d",0
   ans db "Ans : %lld",0xA,0xA,0 
