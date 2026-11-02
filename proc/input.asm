@@ -3,10 +3,10 @@ default rel
 extern _CRT_INIT,printf,scanf
 global main
 
-section .data
+section .rdata
   prompt db "Hello, type a number !!", 0xD, 0xA, 0
   fmt    db "%d",0
-  output db "Did you type: %d >_<",0
+  output db "Did you type: %d >_<",0xA,0
 
 section .text
 
@@ -20,10 +20,10 @@ main:
   call printf         
 
   lea rcx, [fmt]
-  lea rdx, [rsp+0x28] ; 
+  lea rdx, [rsp+0x20] ; 
   call scanf
 
-  mov edx, [rsp+0x28]      
+  mov edx, [rsp+0x20]      
   lea rcx, [output]
   call printf
 
