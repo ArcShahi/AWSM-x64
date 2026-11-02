@@ -4,7 +4,7 @@ default rel
 extern _CRT_INIT,printf,scanf
 global main 
 
-segment .data
+segment .rdata
   prompt db "Hi, Gimme 2 nums: ",0XD,0XA,0
   fmt db"%d%d"
   output db "After Swap: %d <-> %d ",0XD,0XA,0

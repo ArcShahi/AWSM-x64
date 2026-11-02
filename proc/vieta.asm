@@ -5,7 +5,7 @@ default rel
 extern _CRT_INIT,printf,scanf 
 global main
 
-segment .data
+segment .rdata
   msg db "Gimme roots (r1,r2): ",0
   fmt db "%lf %lf",0 
   ans db "Coefficients : a = 1 , b = %g , c = %g",0xA,0xA,0 
