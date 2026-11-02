@@ -4,9 +4,12 @@ default rel
 extern _CRT_INIT,printf,scanf 
 global main 
 
-segment .data
-  ans db "ANS %d",0xA,0
+segment .data 
   N   dd 999 
+
+
+segment .rdata
+  ans db "ANS %d",0xA,0
 
 segment .text
 

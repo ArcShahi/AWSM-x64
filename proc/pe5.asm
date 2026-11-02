@@ -6,7 +6,7 @@ default rel
 extern _CRT_INIT,printf,lcm 
 global main 
 
-segment .data
+segment .rdata
     fmt db "ANS: %lld", 0xA, 0
 
 segment .text

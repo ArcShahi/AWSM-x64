@@ -2,16 +2,19 @@
 bits 64
 default rel
 
-segment .data
+
+extern _CRT_INIT,printf 
+global main
+
+
+segment .rdata
    ans db "Ans: %ld",0XA,0
+
+segment .data 
    N   dd 0x64  
 
-segment .text
-  
-  extern _CRT_INIT
-  extern printf
-  global main
 
+segment .text
 
 sln:
   ; Sum of squares in ramng [1,100] = n(n+1)(2n+1)/6

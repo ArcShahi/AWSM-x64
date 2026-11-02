@@ -17,26 +17,26 @@ segment .text
 ;memoryset(rcx=*dest,edx=value,r8=count)
 memoryset:
   
-  test r8,r8
-  jz .done
-  
+  xor eax,eax 
  .loop:
-    dec r8
-    mov byte[rcx+r8],dl ; copy byte by byte 
-    test r8,r8 
-    jns .loop
+  cmp rax,r8 
+  jge .done 
+  mov [rcx+rax],dl ; copy byte by byte
+  inc rax 
+  jmp .loop 
 
  .done:
    ret
 
 main:
-  push rbp
+  
   sub rsp,0x20
   
+  call _CRT_INIT
   mov ebp,[val]
 
   lea rcx,[val]
-  xor edx,edx  
+  xor edx,edx 
   mov r8 ,0x04
   call memoryset 
 
@@ -47,5 +47,4 @@ main:
 
   xor eax,eax
   add rsp,0x20 
-  pop rbp
   ret

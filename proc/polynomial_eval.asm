@@ -5,7 +5,7 @@ default rel
 extern _CRT_INIT, printf,scanf
 global main
 
-segment .data
+segment .rdata
   msg0 db "Terms: ",0 
   msg1 db "Coefficients (In Standard form) : ",0 
   msg2 db "x: ",0 
