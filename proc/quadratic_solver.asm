@@ -5,7 +5,7 @@ default rel
 extern _CRT_INIT,printf,scanf
 global main
 
-segment .data
+segment .rdata
   msg db "Coefficient (a,b,c): ",0
   fmt db "%lf %lf %lf",0
   ans0 db "2 Real solutions: x1 = %g , x2 = %g",0xA,0xA,0 
