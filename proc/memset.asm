@@ -7,8 +7,10 @@ extern printf
 global main
 
 segment .data
-  ans db "Before : %d , After : %d",0xA,0
   val dd 69420 
+
+segment .rdata
+  ans db "Before : %d , After : %d",0xA,0
 
 segment .text
   
@@ -34,8 +36,8 @@ main:
   mov ebp,[val]
 
   lea rcx,[val]
-  mov edx,0 
-  mov r8 ,4 
+  xor edx,edx  
+  mov r8 ,0x04
   call memoryset 
 
   lea rcx,[ans]

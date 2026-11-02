@@ -6,11 +6,11 @@ default rel
 extern _CRT_INIT,printf,scanf,malloc
 global main
 
-segment .data
+segment .rdata
  msg  db "Specify size of array: ",0xA,0
- msg2 db "Elements...",0xA,0
+ msg2 db "Elements: ",0xA,0
  fmt  db "%d",0
- ans  db "Largest in array: %d",0xA,0
+ ans  db "Largest element : %d",0xA,0
 
 segment .text
 

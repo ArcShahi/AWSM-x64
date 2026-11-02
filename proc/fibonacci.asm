@@ -7,7 +7,7 @@ default rel
 extern _CRT_INIT,printf,scanf
 global main 
 
-segment .data
+segment .rdata
   msg db "Nth term: ",0
   fmt db "%d",0
   ans db "%lld ",0

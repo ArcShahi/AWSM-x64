@@ -5,7 +5,9 @@ extern _CRT_INIT,printf,scanf
 global main
 
 segment .data
-  src dd 69 
+  src dd 69
+
+segment .rdata
   ans db "SRC=%d ,DEST=%d ",0xA,0 
 
 segment .bss 

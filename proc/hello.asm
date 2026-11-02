@@ -4,7 +4,7 @@ default rel
 extern _CRT_INIT,printf
 global main
 
-segment .data
+segment .rdata
   msg db 0xA,"Hello ASM x86-64 ;)",0xA,0XA,0 ; 0XA = \n; 0 = NULL
 
 segment .text

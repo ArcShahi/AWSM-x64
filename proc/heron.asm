@@ -18,7 +18,7 @@ area:
   vmovq xmm4,rax 
   vaddss xmm3,xmm1,xmm2   ;  xmm3= b + c 
   vaddss xmm3,xmm3,xmm0   
-  vmulss xmm3,xmm3,xmm4  ;  xmm3 -  s = ( a + b + c ) / 2  
+  vmulss xmm3,xmm3,xmm4   ;  xmm3 -  s = ( a + b + c ) / 2  
   vsubss xmm4,xmm3,xmm0   ;  xmm4 = ( s - a )
   vsubss xmm0,xmm3,xmm1   ;  xmm0 = ( s - b ) 
   vsubss xmm1,xmm3,xmm2   ;  xmm1 = ( s - c ) 

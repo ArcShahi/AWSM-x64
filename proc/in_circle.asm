@@ -4,9 +4,9 @@ default rel
 extern _CRT_INIT,printf,scanf
 global main 
 
-segment .data
-  msg db "Gimme point(x,y): ",0xA,0
-  msg1 db "Gimme circle(a,b,r):",0xA,0
+segment .rdata
+  msg db "Gimme point(x,y): ",0
+  msg1 db "Gimme circle(a,b,r): ",0
   fmt db "%f%f",0
   fmt1 db "%f%f%f",0
   ans0 db "Point NOT inside  or on circle",0xA,0 
