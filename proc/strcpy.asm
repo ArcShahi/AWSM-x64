@@ -5,7 +5,7 @@ extern _CRT_INIT,__acrt_iob_func,printf,fgets,malloc
 global main
 
 
-segment .data
+segment .rdata
   prompt db "Gimme str: ",0xA,0
   omsg db "COPIED !!",0xA,"SRC @: %p ",0xA,"DEST @: %p ",0xA,"Data >",0xA,"%s"
 

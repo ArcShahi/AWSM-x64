@@ -4,9 +4,9 @@ default rel
 extern _CRT_INIT,__acrt_iob_func,printf,fgets
 global main 
 
-segment .data
+segment .rdata
   prompt db "Gimme str: ",0xA,0
-  omsg db "COUNT: %d ",0xA,0
+  omsg db "Length: %d ",0xA,0
 
 segment .bss
  buff resb 0x40 ; Reserve 64 Bytes
