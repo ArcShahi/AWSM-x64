@@ -5,7 +5,7 @@ extern _CRT_INIT,printf,scanf
 global main
 
 segment .data
-  src dd 69
+  src dd 69 
 
 segment .rdata
   ans db "SRC=%d ,DEST=%d ",0xA,0 
@@ -35,7 +35,7 @@ main:
 
   lea rcx,[dest]
   lea rdx,[src]
-  mov r8, 4 
+  mov r8, 0x04
   call memcpy
 
   lea rcx,[ans]
