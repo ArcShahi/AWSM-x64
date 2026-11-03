@@ -1,15 +1,13 @@
 # AWSM-x64
 
-**Assembly sandbox**: Implementation of mathematical formulas, alogrithms and other operations. It uses NASM , follows x64(Windows) ABI , runs on Intel & AMD chips.
+**Assembly sandbox**: Implementation of mathematical formulas, alogrithms and other operations. It uses NASM , follows x64( Windows ) ABI , runs on Intel & AMD chips.
 
 
 ## Features
 - AVX2 SIMD Linear Algebra library
 - AVX2 SIMD numerical calculation procedures
-- IO Procedures
 - Maths procedures
-- String operations ( More in queue)
-- Fun things.
+
 
 ----
 
@@ -104,9 +102,13 @@ int main()
 4. Can It run faster than High level languages tho? 
 
     Hell no. 
-5. Any recommendation , issues or question ? 
 
-    Create an issue...I've nothing better to do all day anyways.
+5. Why removed calls to `_CRT_INIT` ? 
+    
+    Turn out we dont' have to.  When we don't pass `/entry`, so the linker uses the default entry point for `/subsystem:console` or `-subsystem:console` with a `main` symbol: `mainCRTStartup`, from the static startup code in `msvcrt.lib`. And C run time is initialized somewhere in that function.
+6. Any recommendation , issues or question ? 
+
+    Create an issue...I've nothing better to do all day anyway.
 
 ----
 
