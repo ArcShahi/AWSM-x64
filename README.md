@@ -105,7 +105,7 @@ int main()
 
 5. Why removed calls to `_CRT_INIT` ? 
     
-    Turn out we dont' have to.  When we don't pass `/entry`, so the linker uses the default entry point for `/subsystem:console` or `-subsystem:console` with a `main` symbol: `mainCRTStartup`, from the static startup code in `msvcrt.lib`. And C run time is initialized somewhere in that function.
+    Turns out we dont' have to.  When we don't pass `/entry`, so the linker uses the default entry point for `/subsystem:console` or `-subsystem:console` with a `main` symbol: `mainCRTStartup`, from the static startup code in `msvcrt.lib`. And C run time is initialized somewhere in that function.
 6. Any recommendation , issues or question ? 
 
     Create an issue...I've nothing better to do all day anyway.
