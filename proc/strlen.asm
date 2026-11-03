@@ -1,7 +1,7 @@
 
 default rel
 
-extern _CRT_INIT,__acrt_iob_func,printf,fgets
+extern __acrt_iob_func,printf,fgets
 global main 
 
 segment .rdata
@@ -30,13 +30,13 @@ strlen:
 main:
 
   sub rsp,0x28 ; Shadow space 32 Bytes + 8 Bytes Padding + Pvs return Address = % 16 Stack Alignment 
-  call _CRT_INIT
+  
 
   lea rcx,[prompt]
   call printf
 
   ; fgets(buff,size,FILE*) : can FAIL !!
-  mov ecx,0 ; stdin
+  xor ecx,ecx ; 0 : STDIN 
   call __acrt_iob_func ; returns address of stdin in 'rax'
 
   ; fgets(buff,size,FILE*)

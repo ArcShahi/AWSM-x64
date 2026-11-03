@@ -1,7 +1,7 @@
 ; Project Euler 1: Find the sum of all the multiples of 3 or 5 in range (1,1000)
 default rel
 
-extern _CRT_INIT,printf,scanf 
+extern printf,scanf 
 global main 
 
 segment .data 
@@ -63,10 +63,9 @@ Union2:
 main:
   
   sub rsp,0x28
-  call _CRT_INIT
 
-  mov ecx,3 
-  mov edx,5
+  mov ecx,0x03 
+  mov edx,0x05
   call Union2 
 
   lea rcx,[ans]

@@ -3,7 +3,7 @@
 default rel
 %include "utils.mac"
 
-extern _CRT_INIT,printf,scanf,malloc
+extern printf,scanf,malloc
 global main
 
 segment .rdata
@@ -35,9 +35,7 @@ main:
 
   multipush rsi,rdi 
   sub rsp,0x38       ; 56B : 32B Shadow + 12B local + 12 Padding 
-  call _CRT_INIT
-
-
+  
   lea rcx,[msg]
   call printf
 

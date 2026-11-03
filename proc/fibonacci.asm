@@ -4,7 +4,7 @@ default rel
 
 %include "utils.mac"
 
-extern _CRT_INIT,printf,scanf
+extern printf,scanf
 global main 
 
 segment .rdata
@@ -51,8 +51,7 @@ fibonacci:
 
 main:
   sub rsp,0x28 
-  call _CRT_INIT
-  
+
   lea rcx,[msg]
   call printf 
 

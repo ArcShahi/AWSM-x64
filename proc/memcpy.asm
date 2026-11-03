@@ -1,7 +1,7 @@
 ; memcpy implementation
 default rel
 
-extern _CRT_INIT,printf,scanf
+extern printf,scanf
 global main
 
 segment .data

@@ -1,7 +1,7 @@
 ; Heron's formula for Triangle's area
 default rel
 
-extern _CRT_INIT,printf,scanf
+extern printf,scanf
 global main
 
 segment .rdata
@@ -30,7 +30,6 @@ area:
 
 main:
  sub rsp,0x38 ; 56B : 32 B shadow space + 12B Local + 8B ret add + 12B Padding for Alignment 
- call _CRT_INIT
 
  lea rcx,[msg]
  call printf

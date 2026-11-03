@@ -2,7 +2,6 @@
 bits 64
 default rel
 
-extern _CRT_INIT
 extern printf
 global main
 
@@ -31,8 +30,7 @@ memoryset:
 main:
   
   sub rsp,0x20
-  
-  call _CRT_INIT
+
   mov ebp,[val]
 
   lea rcx,[val]

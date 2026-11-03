@@ -1,7 +1,7 @@
 default rel
 
 
-extern _CRT_INIT,__acrt_iob_func,printf,fgets,malloc
+extern __acrt_iob_func,printf,fgets,malloc
 global main
 
 
@@ -27,8 +27,7 @@ strcpy:
    
 main:
   sub rsp,0x28  ; Allocate stack space : 40B : Shadow 32 + local bufferAddress 8B , returnAdd was pushed : 48%16==0 Stack aligned 
-  call _CRT_INIT
-
+  
   lea rcx,[prompt]
   call printf
 

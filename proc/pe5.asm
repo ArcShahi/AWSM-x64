@@ -3,7 +3,7 @@
 
 default rel
 
-extern _CRT_INIT,printf,lcm 
+extern printf,lcm 
 global main 
 
 segment .rdata
@@ -32,7 +32,6 @@ min_multiple:
 
 main:
     sub rsp, 0x28
-    call _CRT_INIT
 
     mov rcx, 20
     call min_multiple

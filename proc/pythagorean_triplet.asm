@@ -3,7 +3,7 @@
 
 default rel
 
-extern _CRT_INIT,printf,scanf
+extern printf,scanf
 global main
 
 segment .data
@@ -36,8 +36,7 @@ gen_triplet:
 
 main:
   sub rsp,0x28 ; 40B + 8B (ret addr) % 16 == 0 , Aligned 
-  call _CRT_INIT 
-
+  
   lea rcx,[msg]
   call printf
 

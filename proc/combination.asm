@@ -2,7 +2,7 @@
 ; n! / k!(n-k)!  = P(n,k) / k! = n(n-1)(n-2)...(n-k+1) / k! 
 default rel
 
-extern _CRT_INIT,printf,scanf
+extern printf,scanf
 global main
 
 segment .rdata
@@ -43,7 +43,6 @@ combination:
 main:
   
   sub rsp,0x28 
-  call _CRT_INIT
 
   lea rcx,[msg]
   call printf
@@ -64,7 +63,3 @@ main:
   xor eax,eax 
   add rsp,0x28
   ret 
-  
-
-
-

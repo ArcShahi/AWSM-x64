@@ -3,7 +3,7 @@
 bits 64
 default rel
 
-extern _CRT_INIT,printf,scanf
+extern printf,scanf
 global main
 
 segment .rdata
@@ -26,7 +26,6 @@ solve:
 
 main:
   sub rsp,0x28
-  call _CRT_INIT
 
   lea rcx,[fmt]
   lea rdx,[rsp+0x20]

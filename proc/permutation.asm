@@ -3,7 +3,7 @@
 
 default rel
 
-extern _CRT_INIT,printf,scanf
+extern printf,scanf
 global main
 
 segment .rdata
@@ -32,7 +32,6 @@ ret
 main:
 
   sub rsp,0x28 
-  call _CRT_INIT
 
   lea rcx,[msg]
   call printf

@@ -2,7 +2,7 @@
 
 default rel
 
-extern _CRT_INIT,printf,scanf
+extern printf,scanf
 global main
 
 segment .rdata
@@ -77,8 +77,7 @@ find_roots:
 
 main: 
   sub rsp,0x38        ; 56B : 32B shadow + 24B Local and 8B caller ret addr = 64B % 16== 0 Aligned 
-  call _CRT_INIT
-
+  
   lea rcx,[msg]
   call printf 
 

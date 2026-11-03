@@ -1,6 +1,6 @@
 default rel
 
-extern _CRT_INIT,printf,scanf
+extern printf,scanf
 global main 
 
 segment .rdata
@@ -17,8 +17,7 @@ sum:
 main:
   
   sub rsp,0x38      ; 32B Shadow + 16B Local + 8B Padding + 8B retaddr pushed = 64B % 16==0 Aligned 
-  call _CRT_INIT
-   
+    
   lea rcx,[prompt]
   call printf
 

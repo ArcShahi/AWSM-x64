@@ -3,7 +3,7 @@ bits 64
 default rel
 
 
-extern _CRT_INIT,printf 
+extern printf 
 global main
 
 
@@ -45,8 +45,7 @@ sln:
 
 main:
   sub rsp,0x28 
-  call _CRT_INIT
-
+  
   call sln
   lea rcx,[ans]
   mov rdx,rax 

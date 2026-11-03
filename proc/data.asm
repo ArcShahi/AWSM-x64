@@ -1,7 +1,7 @@
 ; mov vs lea 
 default rel
 
-extern _CRT_INIT,printf
+extern printf
 global main 
 
 segment .data
@@ -14,7 +14,6 @@ segment .text
 
 main:
   sub rsp, 0x28    ; 32B shadow space (required on Windows x64) + 8B Padding + 8B retaddr = 48B 
-  call _CRT_INIT
 
   lea rcx,[fmt]
   mov rdx, x     ; loads address of x ; rdx=&x

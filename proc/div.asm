@@ -1,7 +1,7 @@
 ; Example of unsigned division
 default rel
 
-extern _CRT_INIT,printf,scanf 
+extern printf,scanf 
 global main 
 
 segment .rdata
@@ -21,8 +21,7 @@ quotient:
 
 main:
   sub rsp,0x28
-  call _CRT_INIT
-
+  
   lea rcx,[msg]
   call printf
 
@@ -41,7 +40,4 @@ main:
 
   xor eax,eax
   add rsp,0x28
-  ret
-
-
-  
+  ret 

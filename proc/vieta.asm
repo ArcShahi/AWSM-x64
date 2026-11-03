@@ -2,7 +2,7 @@
 
 default rel
 
-extern _CRT_INIT,printf,scanf 
+extern printf,scanf 
 global main
 
 segment .rdata
@@ -35,8 +35,7 @@ coefficients:
 
 main:
   sub rsp,0x38 ; 56B : 32B Shadow + 16B Local + 8B Padding; + 8B retaddr = 64B 
-  call _CRT_INIT
-
+  
   lea rcx,[msg]
   call printf
 

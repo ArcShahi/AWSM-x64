@@ -1,7 +1,7 @@
 ; ... And the journey starts
 default rel
 
-extern _CRT_INIT,printf
+extern printf
 global main
 
 segment .rdata
@@ -11,7 +11,6 @@ segment .text
 
 main:
   sub rsp,0x28
-  call _CRT_INIT
 
   lea rcx,[msg]
   call printf

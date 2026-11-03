@@ -3,7 +3,7 @@ default rel
 
 %include "utils.mac"
 
-extern _CRT_INIT,printf,scanf,malloc
+extern printf,scanf,malloc
 global main
 
 segment .rdata
@@ -53,8 +53,7 @@ binary_serach:
 main:
   multipush rsi,rdi 
   sub rsp,0x38 
-  call _CRT_INIT
-  
+ 
   lea rcx,[msg]
   call printf 
 

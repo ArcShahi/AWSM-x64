@@ -1,6 +1,6 @@
 default rel
 
-extern _CRT_INIT,printf,scanf
+extern printf,scanf
 global main
 
 section .rdata
@@ -14,7 +14,6 @@ main:
 
 ; Stack misaligned after the call to main , return address of caller of main pushed 
   sub rsp,0x28 ; 32B Shadow space + 8B retaddr + 8B padding = 48B aligned to 16B boundary.
-  call _CRT_INIT
 
   lea rcx, [prompt]
   call printf         

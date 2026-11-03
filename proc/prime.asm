@@ -1,10 +1,10 @@
 ; Test if a number is prime
 default rel
 
-extern _CRT_INIT,printf,scanf 
+extern printf,scanf 
 global main 
 
-segment .data
+segment .rdata
   msg  db "Number: ",0
   fmt  db "%lld",0   ; Read very large number
   ans0 db "NOT PRIME",0xA,0 
@@ -53,7 +53,6 @@ isPrime:
 
 main:
   sub rsp,0x28
-  call _CRT_INIT
   
   lea rcx,[msg]
   call printf 
